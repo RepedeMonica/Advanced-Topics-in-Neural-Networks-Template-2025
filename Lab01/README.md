@@ -5,6 +5,7 @@ Check the https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/foundatio
 
 Lab Notebooks:
 1. [Tensor Operations](https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/beginner_pytorch/00_tensor_operations.ipynb)
+2. [Advanced Tensor Operations](https://colab.research.google.com/github/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/advanced_pytorch/AdvancedTensorOperations.ipynb)
 
 ***
 Homework 1:
@@ -19,4 +20,13 @@ For self-study (for students who want to pass):
 
 Advanced (for students who want to learn more):
 * Considering following the [roadmap](https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/foundations/roadmap.md) at your own pace.
-* TODO
+* <details><summary>Benchmarking & jit</summary><ul>
+  <li> Advanced Benchmarking in PyTorch: https://pytorch.org/tutorials/recipes/recipes/benchmark.html </li>
+  <li> TorchScript (PyTorch jit): https://pytorch.org/docs/stable/jit.html </li>
+  <li> PyTorch jit trace: https://pytorch.org/docs/stable/generated/torch.jit.trace.html </li>
+  <li> PyTorch jit script: https://pytorch.org/docs/stable/generated/torch.jit.script.html#torch.jit.script </li>
+  <li> PyTorch compile: https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html 
+  <ul> <li> `torch.compile` does not work on Windows systems! </li></ul>
+  </li>
+  <li>PyTorch compile deep dive: https://pytorch.org/docs/stable/torch.compiler_dynamo_deepdive.html </li>
+</ul></details>
