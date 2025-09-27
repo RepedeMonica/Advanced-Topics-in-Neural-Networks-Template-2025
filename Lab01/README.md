@@ -8,8 +8,7 @@ Lab Notebooks:
 2. [Advanced Tensor Operations](https://colab.research.google.com/github/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/advanced_pytorch/AdvancedTensorOperations.ipynb)
 
 ***
-Homework 1:
-TODO
+Homework 1: https://www.kaggle.com/t/90d77850b6e2470d938ab0154318844f
 
 ***
 For self-study (for students who want to pass):
