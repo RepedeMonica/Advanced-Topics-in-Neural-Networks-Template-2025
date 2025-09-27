@@ -11,10 +11,11 @@ Lab Notebooks:
 Homework 1: https://www.kaggle.com/t/90d77850b6e2470d938ab0154318844f
 
 ***
+
 For self-study (for students who want to pass):
 * [Neural Networks (chapter 1 - chapter 4)](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) (animated introduction to neural networks and backpropagation)
 * [Backpropagation example, from scratch](https://drive.google.com/file/d/11pFnI-NvGjAPgBb2nZKVj2dtE3dVI8qe/view)
-
+* Know [begginer PyTorch](https://github.com/Tensor-Reloaded/AI-Learning-Hub/tree/main/resources/beginner_pytorch)
 ***
 
 Advanced (for students who want to learn more):
