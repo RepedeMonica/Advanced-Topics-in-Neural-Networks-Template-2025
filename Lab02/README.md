@@ -18,15 +18,14 @@ For exercise 1, you also need to record the measurements and explain what did yo
 
 ***
 
-Lab Notebooks
+Lab Notebook
 
 1. [Complex Yet Simple Training Pipeline](https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/advanced_pytorch/ComplexYetSimpleTrainingPipeline.ipynb)
-2. [Inference Optimization and TTA](https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/advanced_pytorch/InferenceOptimizationAndTTA.ipynb)
 
-The exercises from both notebooks for students who want to improve their MLOps skills.
+The exercises from this notebook are a good preparation for homework 2.
 
 <details><summary>Bonus points</summary>
-You will get bonus points if you do all 4 exercises from "Complex Yet Simple Training Pipeline" and submit them until Lab 5.
+You will get bonus points if you do all 4 exercises from "Complex Yet Simple Training Pipeline" and submit them until Lab 4.
 </details>
 
 ***

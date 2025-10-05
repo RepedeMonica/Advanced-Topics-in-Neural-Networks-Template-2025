@@ -25,7 +25,7 @@ Repository for the Advanced Topics in Neural Networks laboratory, "Alexandru Ioa
 ## Table of contents
 
 * [Lab01](./Lab01): Intro, Advanced Tensor Operations, PyTorch Recap (Homework 1: Multi Layer Perceptron + Backpropagation)
-* [Lab02](./Lab02): Datasets, DataLoaders, Data Augmentation Efficient Training Pipelines, Efficient Inference pipelines, Test Time Augmentation
+* [Lab02](./Lab02): Datasets, DataLoaders, Data Augmentation, Efficient Training Pipelines
 
 
 ## [2024 archive](https://github.com/Tensor-Reloaded/Advanced-Topics-in-Neural-Networks-Template-2024)
