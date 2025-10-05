@@ -23,6 +23,8 @@ Lab Notebooks
 1. [Complex Yet Simple Training Pipeline](https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/advanced_pytorch/ComplexYetSimpleTrainingPipeline.ipynb)
 2. [Inference Optimization and TTA](https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/advanced_pytorch/InferenceOptimizationAndTTA.ipynb)
 
+The exercises from both notebooks for students who want to improve their MLOps skills.
+
 <details><summary>Bonus points</summary>
 You will get bonus points if you do all 4 exercises from "Complex Yet Simple Training Pipeline" and submit them until Lab 5.
 </details>
