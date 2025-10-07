@@ -20,7 +20,7 @@ For exercise 1, you also need to record the measurements and explain what did yo
 
 Lab Notebook
 
-1. [Complex Yet Simple Training Pipeline](https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/advanced_pytorch/ComplexYetSimpleTrainingPipeline.ipynb)
+1. [Complex Yet Simple Training Pipeline](https://github.com/Tensor-Reloaded/AI-Learning-Hub/blob/main/resources/advanced_pytorch/ComplexYetSimpleTrainingPipeline.ipynb) -> We will cover this next week.
 
 The exercises from this notebook are a good preparation for homework 2.
 
