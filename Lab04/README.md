@@ -19,6 +19,7 @@ For self-study (for students who want to pass):
 * Foundational CNN papers:
   * AlexNet: https://www.cs.toronto.edu/~hinton/absps/imagenet.pdf
   * ResNet: https://arxiv.org/abs/1512.03385
+  * BatchNorm: https://arxiv.org/abs/1502.03167
 * Advanced optimizers:
   * SAM Optimizer: https://github.com/davda54/sam
   * Muon Optimizer: https://kellerjordan.github.io/posts/muon/
