@@ -10,10 +10,4 @@ Due date: Week 8
 
 ***
 
-For self-study (for students who want to pass):
-* TODO
-***
-
-
-Advanced (for students who want to learn more):
-* TODO
+[Object Detection](https://docs.google.com/presentation/d/1E4DPhSEGXd9ZnIGzbhnpaPxfqzStpL3xtz5Y0jz5P98/edit?usp=sharing)
