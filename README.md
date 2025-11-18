@@ -28,6 +28,8 @@ Repository for the Advanced Topics in Neural Networks laboratory, "Alexandru Ioa
 * [Lab02](./Lab02): Datasets, DataLoaders, Data Augmentation, Efficient Training Pipelines
 * [Lab03](./Lab03): Efficient Training Pipelines, Efficient Inference Pipelines, Test Time Augmentation (Homework 2: Training VGG-13)
 * [Lab04](./Lab04): Cpp Modules, Distributed Data Parallel, SAM Optimizer, Muon Optimizer, Tensorboard, Weights and biases, AlexNet, ResNet, Batch Normalization
-* [Lab05](./Lab05): (Homework 2: Configurable PyTorch Pipeline)
+* [Lab05](./Lab05): (Homework 3: Configurable PyTorch Pipeline)
+* [Lab06](./Lab06)
+* [Lab07](./Lab07)
 
 ## [2024 archive](https://github.com/Tensor-Reloaded/Advanced-Topics-in-Neural-Networks-Template-2024)
