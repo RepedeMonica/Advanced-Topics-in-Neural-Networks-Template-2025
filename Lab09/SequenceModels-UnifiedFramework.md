@@ -59,7 +59,7 @@ Matrix memory via outer products
 > Memory type:
 > * Linear, but input-gated
 > * State ($h_t$) is an expanded compressed history
-> * The shift from LTI to LTV allows the model to selectively ignore or focus on $x_t$ adn $h_{t - 1}$
+> * The shift from LTI to LTV allows the model to selectively ignore or focus on $x_t$ and $h_{t - 1}$
 ---
 
 # 5. SSM Global View (Parallel)
