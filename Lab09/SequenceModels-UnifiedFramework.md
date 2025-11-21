@@ -19,6 +19,7 @@ Single-state nonlinear dynamics ($f$ is nonlinear):
 * $h_t = f(Ah_{t-1} + Bx_t)$
 * $y_t = C h_t$
 
+> O(d) storage capacity in the hidden state and short-term compression
 ---
 
 ## 2. Gated RNN (LSTM / GRU)
@@ -58,7 +59,7 @@ Matrix memory via outer products
 
 > Memory type:
 > * Linear, but input-gated
-> * State ($h_t$) is an expanded compressed history
+> * State ($h_t$) is an expanded compressed history => O(d × N) effective capacity
 > * The shift from LTI to LTV allows the model to selectively ignore or focus on $x_t$ and $h_{t - 1}$
 ---
 
