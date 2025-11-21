@@ -79,7 +79,7 @@ Matrix memory via outer products
 > * ($C B^\top$): Input–Output Interaction Matrix
 > * ($L$): Structural mask from dynamics ($A$)
 > * ($\circ$): Hadamard product
-> * ($M$): Global sequence operator (defines the model’s memory structure)
+> * ($\mathbf{M}$): Global sequence operator (defines the model’s memory structure)
 
 ---
 
@@ -99,6 +99,6 @@ Matrix memory via outer products
 
 ### SSM
 
-* Re-unifies state and memory into a single expanded state..
+* Re-unifies state and memory into a single expanded state.
 * Uses selective linear dynamics instead of explicit gates.
-* Implicit high-order memory through the structure of $M$.
+* Implicit high-order memory through the structure of $\mathbf{M}$.
