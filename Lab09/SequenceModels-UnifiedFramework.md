@@ -39,7 +39,7 @@ Matrix memory via outer products
 * $y_t = C h_t$
 
 > Memory type:
-> * Content-addressable memory 
+> * Content-addressable memory field
 > * Explicit associative memory via outer products
 > * High capacity (O(d^2))
 
