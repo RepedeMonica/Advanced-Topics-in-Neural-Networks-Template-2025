@@ -1,4 +1,4 @@
-# Unified Framework for Sequence Models
+# Evolution of Deep Sequential Models
 
 ### Notation
 
@@ -19,7 +19,7 @@ Single-state nonlinear dynamics ($f$ is nonlinear):
 * $h_t = f(Ah_{t-1} + Bx_t)$
 * $y_t = C h_t$
 
-> O(d) storage capacity in the hidden state and short-term compression
+> Capacity: O(d). Short-term compression only.
 ---
 
 ## 2. Gated RNN (LSTM / GRU)
@@ -41,7 +41,7 @@ Matrix memory via outer products
 > Memory type:
 > * Content-addressable memory field
 > * Explicit associative memory via outer products
-> * High capacity (O(d^2))
+> * High capacity ($O(d^2)$)
 
 ---
 
@@ -58,9 +58,9 @@ Matrix memory via outer products
 * $y_t = C_t h_t$
 
 > Memory type:
-> * Linear, but input-gated
+> * Linear, input-gated
 > * State ($h_t$) is an expanded compressed history => O(d × N) effective capacity
-> * The shift from LTI to LTV allows the model to selectively ignore or focus on $x_t$ and $h_{t - 1}$
+> * The shift from LTI to LTV introduces selective retention/forgetting
 ---
 
 # 5. SSM Global View (Parallel)
@@ -77,8 +77,9 @@ Matrix memory via outer products
 
 > Components:
 > * ($C B^\top$): Input–Output Interaction Matrix
-> * ($L$): Structural mask from dynamics (A)
+> * ($L$): Structural mask from dynamics ($A$)
 > * ($\circ$): Hadamard product
+> * ($M$): Global sequence operator (defines the model’s memory structure)
 
 ---
 
@@ -90,7 +91,7 @@ Matrix memory via outer products
 
 ### Gated RNN
 
-* Splits memory into protected vector memory ($m_t$) + exposed state ($h_t$).
+* Splits memory into protected long-term memory ($m_t$) and exposed state ($h_t$).
 
 ### xLSTM
 
@@ -98,6 +99,6 @@ Matrix memory via outer products
 
 ### SSM
 
-* Re-unifies state and memory.
-* Enlarged state stores linear compressed history.
-* Selective dynamics ($A_t, B_t$) replace explicit gates.
+* Re-unifies state and memory into a single expanded state..
+* Uses selective linear dynamics instead of explicit gates.
+* Implicit high-order memory through the structure of $M$.
