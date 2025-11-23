@@ -10,14 +10,12 @@
 
 ***
 
-The evolution of memory-based Deep Sequential models:
-* [SequenceModels-UnifiedFramework.md](SequenceModels-UnifiedFramework.md)
-* Papers:
-    * LSTM paper: https://deeplearning.cs.cmu.edu/F23/document/readings/LSTM.pdf
-    * xLSTM paper: https://arxiv.org/abs/2405.04517
-    * S4 paper: https://arxiv.org/abs/2111.00396
-    * Mamba paper: https://arxiv.org/abs/2312.00752
-    * Mamba-2 (SSD) paper: https://arxiv.org/abs/2405.21060
+[The Evolution of Memory-Based Deep Sequential Models](SequenceModels-UnifiedFramework.md):
+* LSTM paper: https://deeplearning.cs.cmu.edu/F23/document/readings/LSTM.pdf
+* xLSTM paper: https://arxiv.org/abs/2405.04517
+* S4 paper: https://arxiv.org/abs/2111.00396
+* Mamba paper: https://arxiv.org/abs/2312.00752
+* Mamba-2 (SSD) paper: https://arxiv.org/abs/2405.21060
 
 ***
 
