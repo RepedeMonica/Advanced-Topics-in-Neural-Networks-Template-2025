@@ -1,4 +1,4 @@
-# Evolution of Deep Sequential Models
+# The Evolution of Memory-Based Deep Sequential Models
 
 ### Notation
 
