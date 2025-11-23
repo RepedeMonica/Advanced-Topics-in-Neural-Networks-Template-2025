@@ -1,0 +1,64 @@
+seed: 1337
+device: "cuda"
+
+dataset:
+  name: "CIFAR100"   # CIFAR10 | CIFAR100 | MNIST | OXFORDIIITPET
+  img_size: 32      # 28*28*60000 mnist | (32, 32): 50000 CIFAR10 & 100 | Min H: 108 Max H: 2606  Min W: 114 Max W: 3264 OXFORDIIITPET
+  data_dir: "./data"
+  cutmix_mixup: True
+  tta: False
+
+model:
+  name: "resnest14d"  # resnet18 | resnet50 | resnest14d | resnest26d | mlp
+  pretrained: False
+  mlp:
+    input_dim: 3072 # 3*32*32=3072 cifar10/100 | 1*28*28=784 mnist | 3*224*224=150528 OXFORDIIITPET
+    hidden: [512, 1024, 2048, 1024, 512]
+
+training:
+  epochs: 320
+  batch_size: 128
+  num_workers: 4
+
+optimizer:
+  name: "SAM"   # SGD | Adam | AdamW | Muon | SAM
+  lr: 0.05
+  weight_decay: 0.0005
+  momentum: 0.9
+  nesterov: True
+  ######
+  betas: [0.9, 0.999]
+  eps: 1e-8
+  #####
+  warmup: True
+  #####
+  rho: 0.03
+
+scheduler:
+  name: "ReduceLROnPlateau"   # StepLR | ReduceLROnPlateau
+  step_size: 80
+  gamma: 0.1
+  last_epoch: -1
+  ######
+  factor: 0.2
+  mode: "max"
+  patience: 10
+  threshold: 0.001
+  cooldown: 0
+  min_lr: 1e-6
+
+batch_scheduler:
+  start_bs: 128
+  max_bs: 128
+  step_size: 30
+  scale_factor: 2
+
+early_stopping:
+    patience: 99
+    delta: 0.0005
+    mode: "max"
+
+tensorboard: True
+wandb: True
+tb_dir: "runs/cifar100_resnest26d_sam_mixup"
+wandb_project: "training_pipeline_CIFAR-100-no-pretrain"
