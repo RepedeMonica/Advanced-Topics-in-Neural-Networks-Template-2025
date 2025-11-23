@@ -10,21 +10,26 @@
 
 ***
 
+[The Evolution of Memory-Based Deep Sequential Models](SequenceModels-UnifiedFramework.md):
+* LSTM paper: https://deeplearning.cs.cmu.edu/F23/document/readings/LSTM.pdf
+* xLSTM paper: https://arxiv.org/abs/2405.04517
+* S4 paper: https://arxiv.org/abs/2111.00396
+* Mamba paper: https://arxiv.org/abs/2312.00752
+* Mamba-2 (SSD) paper: https://arxiv.org/abs/2405.21060
+
+***
 
 For self-study (for students who want to pass):
 * RNN tutorial: https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html
 * Introduction to LSTM: https://www.analyticsvidhya.com/blog/2021/03/introduction-to-long-short-term-memory-lstm/
-* Annotated deep learning papers: https://github.com/labmlai/annotated_deep_learning_paper_implementations
 * LSTM code: https://nn.labml.ai/lstm/index.html
-* xLSTM: https://github.com/NX-AI/xlstm
 
 ***
 
 
 Advanced (for students who want to learn more):
+* Annotated deep learning papers: https://github.com/labmlai/annotated_deep_learning_paper_implementations
 * RNN vs GRU vs LSTM: https://medium.com/analytics-vidhya/rnn-vs-gru-vs-lstm-863b0b7b1573
-* LSTM paper: https://deeplearning.cs.cmu.edu/F23/document/readings/LSTM.pdf
-* xLSTM paper: https://arxiv.org/abs/2405.04517
-* xLSTM 7B:
-    * paper: https://arxiv.org/abs/2503.13427
-    * model card: https://huggingface.co/NX-AI/xLSTM-7b
+* xLSTM code: https://github.com/NX-AI/xlstm
+* xLSTM 7B: https://arxiv.org/abs/2503.13427
+* Mamba code: https://github.com/state-spaces/mamba

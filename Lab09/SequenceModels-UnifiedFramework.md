@@ -1,4 +1,4 @@
-# Evolution of Deep Sequential Models
+# The Evolution of Memory-Based Deep Sequential Models
 
 ### Notation
 
@@ -6,7 +6,7 @@
 * ($B$): input projection
 * ($C$): output projection
 * ($h_t$): exposed hidden state
-* ($m_t$): (long-term) vector memory
+* ($m_t$): vector memory
 * ($M_t$): matrix memory
 * ($\mathbf{M}$): global sequence operator
 
@@ -19,7 +19,7 @@ Single-state nonlinear dynamics ($f$ is nonlinear):
 * $h_t = f(Ah_{t-1} + Bx_t)$
 * $y_t = C h_t$
 
-> Capacity: O(d). Short-term compression only.
+> Capacity: $O(d)$. Short-term compression only.
 ---
 
 ## 2. Gated RNN (LSTM / GRU)
@@ -29,6 +29,7 @@ Vector memory controls retention:
 * $h_t = f(Ah_{t-1}, Bx_t, m_t)$
 * $y_t = C h_t$
 
+> Capacity: $O(d)$. Uses gated memory $m_t$ to control retention, enabling long-term memory.
 ---
 
 ## 3. xLSTM - Explicit Matrix Memory
@@ -41,45 +42,62 @@ Matrix memory via outer products
 > Memory type:
 > * Content-addressable memory field
 > * Explicit associative memory via outer products
-> * High capacity ($O(d^2)$)
+> * High capacity $(O(d^2))$
+
+---
+## 4. S4 (LTI-SSM) — The Convolutional Era
+Fixed Linear Dynamics (Time-Invariant):
+* Recurrent:
+  * $h_t = A h_{t-1} + B x_t$
+  * $y_t = C h_t$
+* Global (Convolution):
+  * $y = x * \bar{K}$
+  * $\bar{K} = (CB, CA B, CA^2B, \dots)$
+
+> Mechanism:
+> * Parameters ($A, B, C$) are fixed for the whole sequence.
+> * $A$ is typically derived from a continuous system, but acts as a fixed linear operator per step.
+> * Allows transforming from the time domain to the frequency domain via FFT.
+> * Cannot selectively forget/remember (no context-dependence).
 
 ---
 
-## 4. SSM (LTI/LTV) — Linear State Evolution
+## 5. Mamba (Selective SSM) — The Selection Era
+* Recurrent:
+  * $h_t = A_t h_{t-1} + B_t x_t$
+  * $y_t = C_t h_t$
+* Global (Parallel Scan):
+  * $h = \text{scan}(A_t, B_t, x)$
+  * $y = C_t \cdot h$
 
-### A. LTI-SSM
+> Mechanism:
+> * $A_t$ and $B_t$ are functions of the current input $x_t$.
+> * State ($h_t$) is an expanded compressed history $(O(d \times N))$.
+> * Replaces explicit gates with selective decay/update rates.
+> * Hardware-aware Parallel Associative Scan 
 
-* $h_t = A h_{t-1} + B x_t$
-* $y_t = C h_t$
-
-### B. LTV-SSM
-
-* $h_t = A_t h_{t-1} + B_t x_t$
-* $y_t = C_t h_t$
-
-> Memory type:
-> * Linear, input-gated
-> * State ($h_t$) is an expanded compressed history => O(d × N) effective capacity
-> * The shift from LTI to LTV introduces selective retention/forgetting
 ---
 
-# 5. SSM Global View (Parallel)
+## 6. Mamba-2 (SSD) — The Duality Era
+Structured State Space Duality:
+* Recurrent:
+    *   $h_t = A_t h_{t-1} + B_t x_t$
+    *   $y_t = C_t h_t$
+*   Global (Matrix):
+    *   $y = \mathbf{M} x$
+    *   $\mathbf{M} = L \circ (C B^\top)$
+> Mechanism:
+> *   Duality: Proves SSMs are dual to Linear Attention.
+> *   Components:
+>     *   ($C B^\top$): Input–Output Interaction (Attention-like).
+>     *   ($L$): Mask matrix derived from the cumulative decay of $A_t$.
+>     *   ($\circ$): Hadamard product
+> *   Memory type:
+>     *   State ($h_t$) is an expanded compressed history ($O(d \times N)$).
+>     *   During training (Global), the memory is implicit in the interaction matrix.
+>     *   During inference (Recurrent), it collapses back to the fixed-size state $h_t$.
+> *   Compute: Block-Decomposed Matrix Multiplication.
 
-### A. LTI → Convolution
-
-* $y = x * \bar{K}$
-* $\bar{K} = (CB, CA B, CA^2B, \dots)$
-
-### B. LTV → SSD (Mamba-2)
-
-* $y = \mathbf{M} x$
-* $\mathbf{M} = L \circ (C B^\top)$
-
-> Components:
-> * ($C B^\top$): Input–Output Interaction Matrix
-> * ($L$): Structural mask from dynamics ($A$)
-> * ($\circ$): Hadamard product
-> * ($\mathbf{M}$): Global sequence operator (defines the model’s memory structure)
 
 ---
 
@@ -97,8 +115,11 @@ Matrix memory via outer products
 
 * Upgrades memory to matrix form ($M_t$) for high-capacity storage.
 
-### SSM
+### S4 (SSM)
+*   Re-unifies state and memory ($h_t$).
+*   Uses fixed linear dynamics for long-range context window (via convolution).
 
-* Re-unifies state and memory into a single expanded state.
-* Uses selective linear dynamics instead of explicit gates.
-* Implicit high-order memory through the structure of $\mathbf{M}$.
+### Mamba / Mamba-2
+*   Introduces Selection: Dynamics change per token.
+*   Mamba-1: Uses Scan to compute selective recurrence.
+*   Mamba-2: Uses Matrix Duality ($\mathbf{M}$) to compute selective recurrence as an interaction matrix.
