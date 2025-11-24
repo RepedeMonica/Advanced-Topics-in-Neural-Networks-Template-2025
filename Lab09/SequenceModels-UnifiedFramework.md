@@ -45,7 +45,7 @@ Matrix memory via outer products
 > * High capacity $(O(d^2))$
 
 ---
-## 4. S4 (LTI-SSM) — The Convolutional Era
+## 4. S4 (LTI-SSM) - Convolutional
 Fixed Linear Dynamics (Time-Invariant):
 * Recurrent:
   * $h_t = A h_{t-1} + B x_t$
@@ -63,7 +63,7 @@ Fixed Linear Dynamics (Time-Invariant):
 
 ---
 
-## 5. Mamba (LTV-SSM) — The Selection Era
+## 5. Mamba (LTV-SSM) - Selection
 * Recurrent:
   * $h_t = A_t h_{t-1} + B_t x_t$
   * $y_t = C_t h_t$
@@ -80,7 +80,7 @@ Fixed Linear Dynamics (Time-Invariant):
 
 ---
 
-## 6. Mamba-2 (SSD) — The Duality Era
+## 6. Mamba-2 (SSD) - Structuring
 Structured State Space Duality:
 * Recurrent:
     *   $h_t = A_t h_{t-1} + B_t x_t$
