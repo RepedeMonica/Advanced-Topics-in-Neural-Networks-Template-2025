@@ -45,7 +45,7 @@ Matrix memory via outer products
 > * High capacity $(O(d^2))$
 
 ---
-## 4. S4 (LTI-SSM) — The Convolutional Era
+## 4. S4 (LTI-SSM) - Convolutional
 Fixed Linear Dynamics (Time-Invariant):
 * Recurrent:
   * $h_t = A h_{t-1} + B x_t$
@@ -57,12 +57,13 @@ Fixed Linear Dynamics (Time-Invariant):
 > Mechanism:
 > * Parameters ($A, B, C$) are fixed for the whole sequence.
 > * $A$ is typically derived from a continuous system, but acts as a fixed linear operator per step.
+> * $A$ is a lower diagonal matrix.
 > * Allows transforming from the time domain to the frequency domain via FFT.
 > * Cannot selectively forget/remember (no context-dependence).
 
 ---
 
-## 5. Mamba (Selective SSM) — The Selection Era
+## 5. Mamba (LTV-SSM)
 * Recurrent:
   * $h_t = A_t h_{t-1} + B_t x_t$
   * $y_t = C_t h_t$
@@ -72,13 +73,14 @@ Fixed Linear Dynamics (Time-Invariant):
 
 > Mechanism:
 > * $A_t$ and $B_t$ are functions of the current input $x_t$.
+> * $A_t$ is a diagonal matrix.
 > * State ($h_t$) is an expanded compressed history $(O(d \times N))$.
 > * Replaces explicit gates with selective decay/update rates.
 > * Hardware-aware Parallel Associative Scan 
 
 ---
 
-## 6. Mamba-2 (SSD) — The Duality Era
+## 6. Mamba-2 (SSD) - Structuring
 Structured State Space Duality:
 * Recurrent:
     *   $h_t = A_t h_{t-1} + B_t x_t$
@@ -87,13 +89,15 @@ Structured State Space Duality:
     *   $y = \mathbf{M} x$
     *   $\mathbf{M} = L \circ (C B^\top)$
 > Mechanism:
-> *   Duality: Proves SSMs are dual to Linear Attention.
+> *   Duality: Proves SSMs are a generalization of both memory-based and linear attention-based models.
 > *   Components:
->     *   ($C B^\top$): Input–Output Interaction (Attention-like).
+>     *   $A_t$ is a diagonal matrix equal to $\lambda \times I$.
+>     *   ($C B^\top$): Input–Output Interaction (matmul).
 >     *   ($L$): Mask matrix derived from the cumulative decay of $A_t$.
 >     *   ($\circ$): Hadamard product
+>     *   $\mathbf{M}$ is a structured matrix with low-rank off-diagonal blocks.
 > *   Memory type:
->     *   State ($h_t$) is an expanded compressed history ($O(d \times N)$).
+>     *   State ($h_t$) is an expanded compressed history $(O(d \times N))$.
 >     *   During training (Global), the memory is implicit in the interaction matrix.
 >     *   During inference (Recurrent), it collapses back to the fixed-size state $h_t$.
 > *   Compute: Block-Decomposed Matrix Multiplication.
