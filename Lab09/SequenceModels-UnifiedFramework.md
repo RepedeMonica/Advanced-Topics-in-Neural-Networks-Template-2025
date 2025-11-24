@@ -89,14 +89,14 @@ Structured State Space Duality:
     *   $y = \mathbf{M} x$
     *   $\mathbf{M} = L \circ (C B^\top)$
 > Mechanism:
-> *   Duality: Proves SSMs are dual to Linear Attention.
+> *   Duality: Proves SSMs are a generalization of both memory-based and linear attention-based models.
 > *   Components:
 >     *   $A_t$ is a diagonal matrix equal to $\lambda \times I$.
 >     *   ($C B^\top$): Input–Output Interaction (Attention-like).
 >     *   ($L$): Mask matrix derived from the cumulative decay of $A_t$.
 >     *   ($\circ$): Hadamard product
 > *   Memory type:
->     *   State ($h_t$) is an expanded compressed history ($O(d \times N)$).
+>     *   State ($h_t$) is an expanded compressed history $O((d \times N))$.
 >     *   During training (Global), the memory is implicit in the interaction matrix.
 >     *   During inference (Recurrent), it collapses back to the fixed-size state $h_t$.
 > *   Compute: Block-Decomposed Matrix Multiplication.
