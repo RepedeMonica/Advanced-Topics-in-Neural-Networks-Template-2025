@@ -57,6 +57,7 @@ Fixed Linear Dynamics (Time-Invariant):
 > Mechanism:
 > * Parameters ($A, B, C$) are fixed for the whole sequence.
 > * $A$ is typically derived from a continuous system, but acts as a fixed linear operator per step.
+> * $A$ is a lower diagonal matrix.
 > * Allows transforming from the time domain to the frequency domain via FFT.
 > * Cannot selectively forget/remember (no context-dependence).
 
@@ -72,6 +73,7 @@ Fixed Linear Dynamics (Time-Invariant):
 
 > Mechanism:
 > * $A_t$ and $B_t$ are functions of the current input $x_t$.
+> * $A_t$ is a diagonal matrix.
 > * State ($h_t$) is an expanded compressed history $(O(d \times N))$.
 > * Replaces explicit gates with selective decay/update rates.
 > * Hardware-aware Parallel Associative Scan 
@@ -89,6 +91,7 @@ Structured State Space Duality:
 > Mechanism:
 > *   Duality: Proves SSMs are dual to Linear Attention.
 > *   Components:
+>     *   $A_t$ is a diagonal matrix equal to $\lambda \times I$.
 >     *   ($C B^\top$): Input–Output Interaction (Attention-like).
 >     *   ($L$): Mask matrix derived from the cumulative decay of $A_t$.
 >     *   ($\circ$): Hadamard product
