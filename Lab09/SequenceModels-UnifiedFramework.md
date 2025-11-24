@@ -63,7 +63,7 @@ Fixed Linear Dynamics (Time-Invariant):
 
 ---
 
-## 5. Mamba (Selective SSM) — The Selection Era
+## 5. Mamba (LTV-SSM) — The Selection Era
 * Recurrent:
   * $h_t = A_t h_{t-1} + B_t x_t$
   * $y_t = C_t h_t$
