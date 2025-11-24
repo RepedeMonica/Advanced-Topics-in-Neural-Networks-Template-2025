@@ -95,6 +95,7 @@ Structured State Space Duality:
 >     *   ($C B^\top$): Input–Output Interaction (matmul).
 >     *   ($L$): Mask matrix derived from the cumulative decay of $A_t$.
 >     *   ($\circ$): Hadamard product
+>     *   $\mathbf{M}$ is a structured matrix with low-rank off-diagonal blocks.
 > *   Memory type:
 >     *   State ($h_t$) is an expanded compressed history $(O(d \times N))$.
 >     *   During training (Global), the memory is implicit in the interaction matrix.
