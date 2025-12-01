@@ -31,5 +31,7 @@ Repository for the Advanced Topics in Neural Networks laboratory, "Alexandru Ioa
 * [Lab05](./Lab05): (Homework 3: Configurable PyTorch Pipeline)
 * [Lab06](./Lab06)
 * [Lab07](./Lab07)
+* [Lab09](./Lab09): Sequence models, RNN, LSTM, xLSTM, Mamba, Mamba-2 (Homework 4: Projects)
+* [Lab10](./Lab10): Sequence models, Attention, Transformers, BERT, GPT, ViT (Optional Homework)
 
 ## [2024 archive](https://github.com/Tensor-Reloaded/Advanced-Topics-in-Neural-Networks-Template-2024)
